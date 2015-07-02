@@ -1,0 +1,32 @@
+'use strict';
+
+var React = require('react-native');
+var SearchPageComponent = require('./iOS/Modules/SearchPage/Component/SearchPageComponent');
+
+var styles = React.StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});
+
+class PropertyFinderApp extends React.Component {
+  render() {
+    return (
+      <React.NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          title: 'Property Finder',
+          component: SearchPageComponent,
+        }}/>
+    );
+  }
+}
+
+class HelloWorld extends React.Component {
+  render() {
+    return <React.Text style={styles.text}>Hello World (Again)</React.Text>;
+  }
+}
+
+React.AppRegistry.registerComponent('PropertyFinder',
+  function() { return PropertyFinderApp });

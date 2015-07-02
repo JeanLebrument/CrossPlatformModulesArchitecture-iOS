@@ -1,0 +1,14 @@
+{
+  "author": "Jean Lebrument",
+  "name": "PropertyFinderIOS",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh"
+  },
+  "dependencies": {
+    "flux": "^2.0.3",
+    "keymirror": "^0.1.1",
+    "react-native": "^0.3.1"
+  }
+}
