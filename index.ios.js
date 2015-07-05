@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react-native');
-var SearchPageComponent = require('./iOS/Modules/SearchPage/Component/SearchPageComponent');
+var SearchPageComponent = require('./Modules/SearchPage/Component/SearchPageComponent');
 
 var styles = React.StyleSheet.create({
   container: {

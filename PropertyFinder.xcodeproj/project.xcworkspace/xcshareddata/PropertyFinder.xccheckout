@@ -7,34 +7,34 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>CB3D6433-EEC1-4F49-95DF-D47DDBBEB72E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>PropertyFinder</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>ABF779E71FF7F2E7854DF92ADE3FFAFCE61AF1A9</key>
-		<string>https://github.com/JeanLebrument/ReactNativeCrossPlatformModuleArchitecture.git</string>
+		<key>7A17B706FDCBC0174D4A32A87A0F6F3979370A96</key>
+		<string>https://github.com/JeanLebrument/CrossPlatformModulesArchitecture-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS/PropertyFinder.xcodeproj/project.xcworkspace</string>
+	<string>PropertyFinder.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>ABF779E71FF7F2E7854DF92ADE3FFAFCE61AF1A9</key>
-		<string>../../..</string>
+		<key>7A17B706FDCBC0174D4A32A87A0F6F3979370A96</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/JeanLebrument/ReactNativeCrossPlatformModuleArchitecture.git</string>
+	<string>https://github.com/JeanLebrument/CrossPlatformModulesArchitecture-iOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>ABF779E71FF7F2E7854DF92ADE3FFAFCE61AF1A9</string>
+	<string>7A17B706FDCBC0174D4A32A87A0F6F3979370A96</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>ABF779E71FF7F2E7854DF92ADE3FFAFCE61AF1A9</string>
+			<string>7A17B706FDCBC0174D4A32A87A0F6F3979370A96</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ReactNativeCrossPlatformModuleArchitecture</string>
+			<string>CrossPlatformModulesArchitecture-iOS</string>
 		</dict>
 	</array>
 </dict>
