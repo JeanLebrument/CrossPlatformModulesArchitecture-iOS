@@ -69,10 +69,7 @@ class SearchResultsComponent extends Component {
   componentDidMount() {
     SearchResultsStore.addChangeListener(this.resultsFounds.bind(this));
 
-    if (this.props.location === 'Current location')
-      SearchResultsAction.searchResultsForCurrentLocation();
-    else
-      SearchResultsAction.searchResultsForLocation(this.props.location);
+    SearchResultsAction.searchResultsForLocation(this.props.location);
   }
 
   componentWillUnmount() {

@@ -78,7 +78,7 @@ class SearchPageComponent extends Component {
   }
 
   onLocationPressed() {
-    SearchPageOutput.goToNextModule(this, "Current location");
+    SearchPageOutput.goToNextModule(this, "current location");
   }
 
   onSearchTextChanged(event) {
