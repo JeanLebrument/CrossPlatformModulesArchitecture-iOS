@@ -1,8 +1,6 @@
 'use strict';
 
 var React = require('react-native');
-var SearchPageAction = require('../../../Core/Modules/SearchPage/Action/SearchPageAction');
-var SearchPageStore = require('../../../Core/Modules/SearchPage/Store/SearchPageStore');
 var SearchPageOutput = require('../Output/SearchPageOutput');
 
 var {
@@ -11,7 +9,6 @@ var {
   TextInput,
   View,
   TouchableHighlight,
-  ActivityIndicatorIOS,
   Image,
   Component
 } = React;
@@ -67,54 +64,21 @@ var styles = StyleSheet.create({
   }
 });
 
-class SearchPageComponent  extends Component {
+class SearchPageComponent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      searchString: 'london',
-      isLoading: false,
-      resultError: ''
+      searchString: 'london'
     };
   }
 
-  resultsFounds() {
-    var results = SearchPageStore.getResults();
-    var formatedLocation = results && results.location ? results.location : '';
-
-    console.log('formatedLocation: ' + formatedLocation);
-
-    this.setState({
-      searchString: formatedLocation,
-      isLoading: false,
-      resultError: SearchPageStore.getResultError()
-    });
-
-    if (results && results.listings &&
-      (this.state.resultError === '' || !this.state.resultError))
-      SearchPageOutput.goToNextModule(this, results.listings);
-  }
-
-  componentDidMount() {
-    SearchPageStore.addChangeListener(this.resultsFounds.bind(this));
-  }
-
-  componentWillUnmount() {
-    SearchPageStore.removeChangeListener(this.resultsFounds.bind(this));
-  }
-
   onSearchPressed() {
-    if (this.state.isLoading == false) {
-      this.setState({isLoading: true});
-      SearchPageAction.searchResultsForLocation(this.state.searchString);
-    }
+    SearchPageOutput.goToNextModule(this, this.state.searchString);
   }
 
   onLocationPressed() {
-    if (this.state.isLoading == false) {
-      this.setState({isLoading: true});
-      SearchPageAction.searchResultsForCurrentLocation();
-    }
+    SearchPageOutput.goToNextModule(this, "Current location");
   }
 
   onSearchTextChanged(event) {
@@ -122,12 +86,6 @@ class SearchPageComponent  extends Component {
   }
 
   render() {
-    var spinner = this.state.isLoading ?
-      ( <ActivityIndicatorIOS
-          hidden='true'
-          size='large'/> ) :
-      ( <View/>);
-
     return (
       <View style={styles.container}>
         <Text style={styles.description}>
@@ -154,8 +112,6 @@ class SearchPageComponent  extends Component {
           <Text style={styles.buttonText}>Location</Text>
         </TouchableHighlight>
         <Image source={require('image!house')} style={styles.image}/>
-        {spinner}
-        <Text style={styles.description}>{this.state.resultError}</Text>
       </View>
     );
   }

@@ -3,11 +3,11 @@
 var SearchResultsComponent = require('../../SearchResults/Component/SearchResultsComponent');
 
 class SearchPageOutput {
-  static goToNextModule(component, listings) {
+  static goToNextModule(component, location) {
     component.props.navigator.push({
       title: 'Results',
       component: SearchResultsComponent,
-      passProps: {listings: listings}
+      passProps: {location: location}
     });
   }
 }
