@@ -14,7 +14,8 @@ var {
   ListView,
   Text,
   Component,
-  ActivityIndicatorIOS
+  ActivityIndicatorIOS,
+  AlertIOS
 } = React;
 
 var styles = StyleSheet.create({
@@ -81,11 +82,22 @@ class SearchResultsComponent extends Component {
   resultsFounds() {
     var results = SearchResultsStore.getResults();
     var formatedLocation = results && results.location ? results.location : '';
+    var error = SearchResultsStore.getResultError();
+
+    if (error && error.message && error.message !== '') {
+      AlertIOS.alert(
+        'An error occured',
+        error.message,
+        [
+          {text: 'Ok', onPress: () => this.props.navigator.pop()},
+        ]
+      )
+    }
 
     this.setState({
       isLoading: false,
       dataSource: this.state.dataSource.cloneWithRows(results.listings),
-      resultError: SearchResultsStore.getResultError(),
+      resultError: error,
       listings: results.listings,
     });
   }
