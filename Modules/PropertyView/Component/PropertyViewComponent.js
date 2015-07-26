@@ -43,7 +43,6 @@ var styles = StyleSheet.create({
 });
 
 class PropertyViewComponent extends React.Component {
-
   render() {
     var property = this.props.property;
     var stats = property.bedroom_number + ' bed ' + property.property_type;

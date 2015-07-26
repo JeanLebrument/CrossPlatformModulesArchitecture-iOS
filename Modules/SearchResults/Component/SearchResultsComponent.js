@@ -77,9 +77,9 @@ class SearchResultsComponent extends Component {
   }
 
   resultsFounds() {
-    var results = SearchResultsStore.getResults();
+    var results = SearchResultsStore.results;
     var formatedLocation = results && results.location ? results.location : '';
-    var error = SearchResultsStore.getResultError();
+    var error = SearchResultsStore.resultError;
 
     if (error && error.message && error.message !== '') {
       AlertIOS.alert(
